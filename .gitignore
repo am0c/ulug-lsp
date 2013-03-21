@@ -1,0 +1,10 @@
+
+# dummies while compiling
+*.o
+
+# backup files
+\#*#
+*~
+
+# targets
+/tail-f
