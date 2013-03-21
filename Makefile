@@ -1,9 +1,9 @@
 
 all: tail-f seek
 
-tail-f: tail-f.o tail-f.h debug.h
+tail-f: tail-f.c tail-f.h debug.h
 
-seek: seek.o debug.h
+seek: seek.c debug.h
 
 clean:
 	rm -f *~
