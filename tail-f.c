@@ -164,10 +164,8 @@ readline_or_postpone(struct file *file, off_t cur_size)
             break;
         
         if (len == -1) {
-            if (errno == EAGAIN) {
-                fputs("EAGAIN\n", stderr);
+            if (errno == EAGAIN)
                 return TAIL_POSTPONE;
-            }
 
             perrorf ("read() failed: %s", file->fn);
         }
@@ -183,10 +181,9 @@ readline_or_postpone(struct file *file, off_t cur_size)
         i += len;
     }
 
-    if (!newline) {
-        fputs("nonewline\n", stderr);
+    if (!newline)
         return TAIL_POSTPONE;
-    }
+
     end = lseek(file->fd, size, SEEK_SET);
     if (end == -1)
         return TAIL_ERROR;
@@ -206,11 +203,9 @@ readline_or_postpone(struct file *file, off_t cur_size)
             break;
         
         if (len == -1) {
-            if (errno == EAGAIN) {
-                fputs("EAGAIN\n", stderr);
-
+            if (errno == EAGAIN)
                 return TAIL_POSTPONE;
-            }
+
             perrorf ("read() failed: %s", file->fn);
         }
 
