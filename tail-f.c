@@ -164,8 +164,6 @@ readline_or_postpone(struct file *file, off_t cur_size)
             break;
         
         if (len == -1) {
-            extern int errno;
-            
             if (errno == EAGAIN) {
                 fputs("EAGAIN\n", stderr);
                 return TAIL_POSTPONE;
@@ -208,8 +206,6 @@ readline_or_postpone(struct file *file, off_t cur_size)
             break;
         
         if (len == -1) {
-            extern int errno;
-            
             if (errno == EAGAIN) {
                 fputs("EAGAIN\n", stderr);
 
