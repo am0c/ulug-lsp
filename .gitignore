@@ -8,3 +8,5 @@
 
 # targets
 /tail-f
+/seek
+/seek.bin
